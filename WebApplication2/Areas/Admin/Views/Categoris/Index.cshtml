@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+<div class="text-center mt-5">
+    <h1 class="display-5 fw-bold">Welcome to the Admin Panel</h1>
+    <p class="lead">Manage your application content and settings here.</p>
+</div>
+
+
+<table class="table table-striped" role="table">
+    <thead>
+        <tr>
+            <th style="width: 10px" scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th>Actios</th>
+            <
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in ViewBag.Catgores)
+        {
+            <tr class="align-middle">
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>
+                    @item.Description
+                </td>
+                  <td>
+                    <a href="/admin/Categoris/Edit/@item.Id" class="btn btn-sm btn-primary">
+          <i class="bi bi-pencil"></i> Edit
+        </a>
+                    <a href="/admin/Categoris/delete/@item.Id" class="btn btn-sm btn-danger">
+          <i class="bi bi-trash"></i> Delete
+        </a>
+      </td>
+              
+            </tr>
+            
+        }
+
+        <a href="/admin/Categoris/Create" class="btn btn-sm btn-primary">
+            <i class="bi bi-pencil"></i> Create
+        </a>
+        
+        
+    </tbody>
+</table>
+
+

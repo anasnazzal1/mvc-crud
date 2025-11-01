@@ -1,0 +1,27 @@
+﻿@model WebApplication2.Models.Category
+
+<div class="card shadow-sm mt-4">
+    <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">تعديل التصنيف</h5>
+    </div>
+
+    <form action="/Admin/Categoris/Edit" method="post" class="card-body">
+
+        <input name="Id" type="hidden" value="@Model.Id" />
+
+        <div class="mb-3">
+            <label class="form-label fw-bold">اسم التصنيف</label>
+            <input name="Name" value="@Model.Name" class="form-control form-control-lg" placeholder="أدخل اسم التصنيف" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-bold">الوصف</label>
+            <textarea name="Description" class="form-control" rows="3">@Model.Description</textarea>
+        </div>
+
+        <div class="text-end">
+            <button type="submit" class="btn btn-primary px-4">تعديل</button>
+        </div>
+    </form>
+</div>
